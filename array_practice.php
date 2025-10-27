@@ -1,20 +1,27 @@
 <?php 
-    $fruit=array("Mango", "Orange", 123, 10.9);
-        var_dump($fruit);echo"</br></br>";
+    $x=array("Suraya", "Rita", 941);
 
-        print_r($fruit);echo"</br></br>";
+    //koyta array data ase,ki doroner data ase,kototuk jayga nise,kon data koto number
+        //var_dump($x);
 
-        echo $fruit[3];echo"</br></br>";
+    //data index akare asbe
+        //print_r($x);
 
-        echo $fruit[1]="Grape";echo"</br></br>";
+    //single data dekhar jonno
+        //echo $x[1];
 
-        print_r($fruit);echo"</br></br>";
+    //value change korar jonno ba new data add kora
+       /* $x[0]="SI";
+        $x[3]="R";
+        print_r($x); */
 
-        foreach($fruit as $nm){
-            echo $nm."<br>";
-        }echo"</br></br>";
-
-        foreach($fruit as $num=>$nm){
-            echo "$num=>$nm <br>";
+    //array er value onno ekta variable er modhe show
+       /* foreach($x as $y){
+            echo $y."</br>";
+        }  */
+        
+    //array er value onno ekta variable er modhe index soho show    
+        foreach($x as $y=>$z){
+            echo"$y=>$z <br>";
         }
 ?>
