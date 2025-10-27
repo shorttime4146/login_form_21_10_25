@@ -21,18 +21,18 @@
         }
         
     }
-    $sq="select * from resigter where user_name='$u_nm' and password=$pass";
+    $sql="select * from resigter where user_name='$u_nm' and password=$pass";
     $data_obj=$conn->query($sql);
     $data_arr=$data_obj->fetch_assoc();
 
-    $data_arr=$f_name['first_name'];
-    $data_arr=$u_name['user_name'];
-    $data_arr=$password['password'];
+    $f_name=$data_arr["first_name"];
+    $u_name=$data_arr["user_name"];
+    $password=$data_arr["password"];
 
-    if($conn->query($data_arr)==1){
-        echo"Data Login Successfully.";
+    if($data_obj->num_rows>0){
+        header("LOcation:profile.php?baaler_id=".$data_arr["id"]);
     }else{
-        echo"Login Data Error.".$data_arr."</br>".$conn->error;
+        echo"Login Data Error."."</br>".$conn->error;
     }
     
 ?>

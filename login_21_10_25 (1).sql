@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2025 at 10:20 AM
+-- Generation Time: Oct 27, 2025 at 08:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,7 +62,9 @@ CREATE TABLE `resigter` (
 --
 
 INSERT INTO `resigter` (`id`, `first_name`, `user_name`, `email`, `password`, `phone`, `address`, `gender_id`) VALUES
-(1, 'Md Mamun', 'malkhor', 'malkhor@gmail.com', '420', NULL, 'shipahibag bazar', 1);
+(1, 'Md Mamun', 'mamun', 'mamun@gmail.com', '1234', 192896, 'shipahibag bazar', 1),
+(2, 'MA sagor', 'sagor', 'sagor@gmail.com', '4321', 192578, 'Shipahibag,Khilgaon', 1),
+(3, 'Suraya Islam', 'rita', 'suraya@gmail.com', '963', 161257, '406/A Shipahibag', 2);
 
 --
 -- Indexes for dumped tables
@@ -94,7 +96,7 @@ ALTER TABLE `gender`
 -- AUTO_INCREMENT for table `resigter`
 --
 ALTER TABLE `resigter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

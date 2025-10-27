@@ -15,8 +15,8 @@
 <!DOCTYPE html>
     <head></head>
     <body>
-        <form action="login_controller" method="post">
-            <input type="text" name="username" placeholder="Username" value=""></br>
+        <form action="login_controller.php" method="post">
+            <input type="text" name="user_name" placeholder="Username" value=""></br>
             <input type="password" name="password" placeholder="Password" value=""></br>
             <label>Forget Password</label></br></br>
             <button type="submit">Login</button>
