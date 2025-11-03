@@ -1,6 +1,6 @@
-<?php 
+<?php
     session_start();
-    
+
     $server="localhost";
     $user="root";
     $pass="";
@@ -13,29 +13,39 @@
         //echo"Database Connection Successfully.";
     }
 
-    $id=$_GET["baaler_id"];
-    $sql_t1="select * from resigter where id=$id";
-    $obj=$conn->query($sql_t1);
-    $arr=$obj->fetch_assoc();
+    if(isset($_SESSION["reg_id"])){
+        $id=$_GET["id"];
+        $sql="select * from resigter where id=$id";
+        $obj=$conn->query($sql);
+        $arr=$obj->fetch_assoc();
 
-    $sql_t2="select * from resigter";
-    $data=$conn->query($sql_t2);
+        $sql="select * from resigter";
+        $data=$conn->query($sql);
 ?>
 
 <table>
     <thead></thead>
     <tbody>
         <tr>
-            <td>First Name=></td>
+            <th>First Name =></th>
             <td><?php echo $arr["first_name"]; ?></td>
         </tr>
         <tr>
-            <td>User Name=></td>
+            <th>User Name =></th>
             <td><?php echo $arr["user_name"]; ?></td>
         </tr>
         <tr>
-            <td>Password=></td>
+            <th>Email =></th>
+            <td><?php echo $arr["email"]; ?></td>
+        </tr>
+        <tr>
+            <th>Password =></th>
             <td><?php echo $arr["password"]; ?></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="logout.php">Logout</a>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -43,18 +53,18 @@
 <table border="1" style="margin-top:5%">
     <thead>
         <tr>
-            <th width="250px">First Name</th>
-            <th width="150px">User Name</th>
-            <th width="250px">Email</th>
-            <th width="50px">Password</th>
-            <th width="50px">Phone</th>
-            <th width="300px">Address</th>
-            <th width="100px">Gender Id</th>
+            <th>First Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Gender Id</th>
         </tr>
     </thead>
     <tbody>
         <?php 
-            while($row=$data->fetch_assoc()){
+            while($row=$data->fetch_assoc()){        
         ?>
         <tr>
             <td><?php echo $row["first_name"]; ?></td>
@@ -63,8 +73,13 @@
             <td><?php echo $row["password"]; ?></td>
             <td><?php echo $row["phone"]; ?></td>
             <td><?php echo $row["address"]; ?></td>
-            <td><?php echo $row["gender_id"]; ?></td>            
+            <td><?php echo $row["gender_id"]; ?></td>
         </tr>
         <?php } ?>
-</tbody>
+    </tbody>
 </table>
+<?php 
+    }else{
+        header("Location:login_form.php");
+    }
+?>

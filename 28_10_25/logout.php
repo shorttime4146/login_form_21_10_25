@@ -1,0 +1,14 @@
+<?php 
+    session_start();
+    if(isset($_SESSION["reg_id"])){
+        $_SESSION=[];
+        session_unset();
+        session_destroy();
+        header("Location:login_form.php");
+        exit();
+    }else{
+        header("Location:login_form.php");
+        exit();
+    }
+    
+?>
